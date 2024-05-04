@@ -101,25 +101,25 @@ export const Calculate = () => {
         </div>
       </div>
       <div
-        id="data"
-        className="flex flex-col bg-zinc-50 pb-12 w-full mx-auto max-w-2xl  text-zinc-500 items-center rounded-t-3xl  text-lg "
+        id="dataCard"
+        className="flex flex-col bg-zinc-50 pb-12 w-screen md:w-full md:max-w-2xl text-zinc-500 items-center rounded-t-3xl text-lg mx-auto px-4"
       >
-        <div className="text-3xl py-8 px-8">Heart Rate Zone</div>
+        <div className="text-3xl py-8">Heart Rate Zone</div>
 
-        <div className="flex flex-col gap-4 text-xl">
-          <div className="flex justify-between w-full px-8 rounded-xl">
-            <div className="w-32 ">Zone</div>
-            <div className="w-32">Effort</div>
+        <div className="flex flex-col gap-4 text-xl w-full">
+          <div className="flex justify-between rounded-xl bg-white p-4">
+            <div className="w-24">Zone</div>
+            <div className="w-24">Effort</div>
             <div className="w-32">Rate</div>
           </div>
           <div
-            className={`flex justify-between w-full border border-red-500 py-4 px-8 rounded-xl cursor-pointer ${
+            className={`zoneList flex justify-between border border-red-500 p-4 rounded-xl cursor-pointer ${
               selectedZone === 5 ? "bg-red-500 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(5)}
           >
-            <div className="w-32 ">5</div>
-            <div className="w-32">Max</div>
+            <div className="w-24">5</div>
+            <div className="w-24">Max</div>
             <div className="w-32">
               {calculateHeartRateZone(5)}{" "}
               <span
@@ -131,7 +131,7 @@ export const Calculate = () => {
               </span>
             </div>
           </div>
-          <div
+          {/* <div
             className={`flex justify-between w-full border border-orange-500 py-4 px-8 rounded-xl cursor-pointer ${
               selectedZone === 4 ? "bg-orange-500 text-zinc-50" : ""
             }`}
@@ -206,7 +206,7 @@ export const Calculate = () => {
                 bpm
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
