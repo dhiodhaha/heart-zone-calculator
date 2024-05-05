@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { CircleAlert } from "lucide-react";
 import { CircleHelpIcon } from "lucide-react";
 import { Fragment, useState } from "react";
 
@@ -23,7 +24,7 @@ export const Modal = () => {
           onClick={openModal}
           className="rounded-md px-4 py-2 text-sm font-medium text-white  focus:outline-none focus-visible:ring-2  "
         >
-          <CircleHelpIcon className="text-white/80 hover:text-white/90 duration-300 transition-all" />
+          <CircleAlert className="text-white/80 hover:text-white/90 duration-300 transition-all" />
         </button>
       </div>
 
