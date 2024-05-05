@@ -1,10 +1,10 @@
 "use client";
 
-import { CircleHelp } from "lucide-react";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon } from "lucide-react";
+import { CheckIcon, CircleHelp } from "lucide-react";
 import { ChevronDownIcon } from "lucide-react";
+import { Modal } from "./Modal";
 
 const zones = [
   { id: 5, name: "Zone 5 - VO²  Max" },
@@ -51,12 +51,6 @@ export const Calculate = () => {
     setShowResetButton(rawAge !== "");
   };
 
-  const handleZoneSelect = (e) => {
-    const selectedId = parseInt(e.target.value);
-    const selectedZone = zones.find((zone) => zone.id === selectedId);
-    setSelectedZone(selectedZone);
-  };
-
   return (
     <div
       id="Data"
@@ -66,7 +60,8 @@ export const Calculate = () => {
         <div className="flex justify-between items-center px-8 text-md md:text-xl">
           <div>HRZ Calculator</div>
           <div className="size-12 flex justify-center items-center">
-            <CircleHelp className="size-6" />
+            <Modal />
+            <CircleHelp className="size-6 opacity-60" />
           </div>
         </div>
       </div>{" "}
@@ -89,7 +84,7 @@ export const Calculate = () => {
           <div className="w-full text-zinc-900">
             <Listbox value={selectedZone} onChange={handleZoneChange}>
               <div className="relative mt-1">
-                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-zinc-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-zinc-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 sm:text-sm">
                   <span className="block truncate">{selectedZone.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronDownIcon
@@ -145,7 +140,7 @@ export const Calculate = () => {
           </div>
           {showResetButton && (
             <button
-              className="bg-indigo-400 border-indigo-500 border hover:bg-indigo-300 text-white font-light w-full py-3 px-20 rounded-xl my-4 transition-all druation-300 shadow-md"
+              className=" bg-indigo-500 hover:bg-indigo-300 border-black/40 text-white font-light w-full py-3 px-20 rounded-xl my-4 transition-colors druation-300 shadow-md"
               onClick={() => {
                 setAge("");
                 setShowResetButton(false);
@@ -154,7 +149,6 @@ export const Calculate = () => {
               Reset
             </button>
           )}
-          {/* Input select for zone selection */}
         </div>
       </div>
       <div
