@@ -84,7 +84,7 @@ export const Calculate = () => {
           <div className="w-full text-zinc-900">
             <Listbox value={selectedZone} onChange={handleZoneChange}>
               <div className="relative mt-1">
-                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-zinc-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 sm:text-sm">
+                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-zinc-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-300 ">
                   <span className="block truncate">{selectedZone.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronDownIcon
@@ -99,7 +99,7 @@ export const Calculate = () => {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none ">
                     {zones.map((zone, zonesId) => (
                       <Listbox.Option
                         key={zone.id}
@@ -183,8 +183,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={` flex justify-between border border-orange-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[1] ? "bg-orange-600 text-zinc-50" : ""
+            className={` flex justify-between border border-yellow-500 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[1] ? "bg-yellow-400 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[1])}
           >
@@ -202,8 +202,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={` flex justify-between border border-green-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[2] ? "bg-green-600 text-zinc-50" : ""
+            className={` flex justify-between border border-lime-600 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[2] ? "bg-lime-500 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[2])}
           >
@@ -221,8 +221,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={` flex justify-between border border-blue-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[3] ? "bg-blue-600 text-zinc-50" : ""
+            className={` flex justify-between border border-sky-600 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[3] ? "bg-sky-500 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[3])}
           >
@@ -240,8 +240,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={` flex justify-between border border-gray-300 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[4] ? "bg-gray-400 text-zinc-50" : ""
+            className={` flex justify-between border border-slate-400 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[4] ? "bg-slate-400/80 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[4])}
           >
