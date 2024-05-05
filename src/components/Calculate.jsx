@@ -7,7 +7,7 @@ import { CheckIcon } from "lucide-react";
 import { ChevronDownIcon } from "lucide-react";
 
 const zones = [
-  { id: 5, name: "Zone 5 - VO2 Max" },
+  { id: 5, name: "Zone 5 - VO²  Max" },
   { id: 4, name: "Zone 4 - Anaerobic" },
   { id: 3, name: "Zone 3 - Aerobic" },
   { id: 2, name: "Zone 2 - Fat Burn" },
@@ -60,7 +60,7 @@ export const Calculate = () => {
   return (
     <div
       id="Data"
-      className="flex flex-col items-center w-full text-white min-h-screen justify-between md:h-[calc(100vh-64px)]"
+      className="flex flex-col items-center w-full text-white min-h-screen justify-between md:h-[calc(100vh-64px)] "
     >
       <div className="w-full max-w-2xl mx-auto pt-4">
         <div className="flex justify-between items-center px-8 text-md md:text-xl">
@@ -73,7 +73,7 @@ export const Calculate = () => {
       <div>
         <div className="flex flex-col items-center justify-center ">
           {error && (
-            <span className="my-4 relative inline-block bg-red-600 py-1.5 px-3  text-zinc-50 text-sm">
+            <span className="mb-4 relative inline-block bg-red-600 py-1.5 px-3  text-zinc-50 text-sm">
               {error}
             </span>
           )}{" "}
@@ -89,7 +89,7 @@ export const Calculate = () => {
           <div className="w-full text-zinc-900">
             <Listbox value={selectedZone} onChange={handleZoneChange}>
               <div className="relative mt-1">
-                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="mt-2 relative w-full cursor-pointer rounded-lg bg-zinc-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate">{selectedZone.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronDownIcon
@@ -145,7 +145,7 @@ export const Calculate = () => {
           </div>
           {showResetButton && (
             <button
-              className="bg-indigo-400 hover:bg-indigo-300 text-white  py-4 px-24 rounded-xl my-4 transition-all druation-300"
+              className="bg-indigo-400 border-indigo-500 border hover:bg-indigo-300 text-white font-light w-full py-3 px-20 rounded-xl my-4 transition-all druation-300 shadow-md"
               onClick={() => {
                 setAge("");
                 setShowResetButton(false);
@@ -159,18 +159,18 @@ export const Calculate = () => {
       </div>
       <div
         id="dataCard"
-        className="flex flex-col bg-zinc-50 pb-12 w-screen md:w-full md:max-w-2xl text-zinc-500 items-center rounded-t-3xl text-sm md:text-lg mx-auto px-4"
+        className="px-12 md:px-16 flex flex-col bg-zinc-50 pb-12 w-screen md:w-full md:max-w-2xl text-zinc-500 items-center rounded-t-3xl  mx-auto "
       >
         <div className="text-xl py-4">Heart Rate Zone</div>
 
-        <div className="flex flex-col gap-2 text-sm md:text-xl w-full md:pb-0 pb-20">
+        <div className="flex flex-col gap-2 text-sm md:text-lg w-full md:pb-0 pb-20">
           <div className="flex justify-between rounded-xl px-4 pt-2">
             <div className="w-24">Zone</div>
             <div className="w-24">Effort</div>
             <div className="w-32">Rate</div>
           </div>
           <div
-            className={`zoneList flex justify-between border border-red-500 p-3 pl-6 rounded-xl cursor-pointer ${
+            className={`  flex justify-between border border-red-600 p-3 pl-6 rounded-xl cursor-pointer ${
               selectedZone === zones[0] ? "bg-red-500 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[0])}
@@ -189,8 +189,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={`zoneList flex justify-between border border-orange-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[1] ? "bg-orange-500 text-zinc-50" : ""
+            className={` flex justify-between border border-orange-500 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[1] ? "bg-orange-600 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[1])}
           >
@@ -208,8 +208,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={`zoneList flex justify-between border border-green-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[2] ? "bg-green-500 text-zinc-50" : ""
+            className={` flex justify-between border border-green-500 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[2] ? "bg-green-600 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[2])}
           >
@@ -227,8 +227,8 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={`zoneList flex justify-between border border-blue-500 p-3 pl-6 rounded-xl cursor-pointer ${
-              selectedZone === zones[3] ? "bg-blue-500 text-zinc-50" : ""
+            className={` flex justify-between border border-blue-500 p-3 pl-6 rounded-xl cursor-pointer ${
+              selectedZone === zones[3] ? "bg-blue-600 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[3])}
           >
@@ -246,7 +246,7 @@ export const Calculate = () => {
             </div>
           </div>
           <div
-            className={`zoneList flex justify-between border border-gray-400 p-3 pl-6 rounded-xl cursor-pointer ${
+            className={` flex justify-between border border-gray-300 p-3 pl-6 rounded-xl cursor-pointer ${
               selectedZone === zones[4] ? "bg-gray-400 text-zinc-50" : ""
             }`}
             onClick={() => setSelectedZone(zones[4])}
