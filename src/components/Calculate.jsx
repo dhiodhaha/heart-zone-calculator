@@ -64,23 +64,23 @@ export const Calculate = () => {
             <CircleHelp className="size-6 opacity-60" />
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div>
         <div className="flex flex-col items-center justify-center ">
           {error && (
-            <span className="mb-4 relative inline-block bg-red-600 py-1.5 px-3  text-zinc-50 text-sm">
+            <span className="mb-4 md:top-0 absolute md:relative top-16 inline-block bg-red-600 py-1.5 px-3  text-zinc-50 text-sm">
               {error}
             </span>
-          )}{" "}
-          <div className="text-xl">Age</div>{" "}
+          )}
+          <div className="text-xl">Age</div>
           <div className="flex flex-col items-center border-b-2 border-b-indigo-500">
             <input
               type="number"
               className="select-all flex flex-wrap text-center group-focus border-none outline-none focus:ring-transparent text-zinc-50 text-8xl bg-transparent w-48 focus:outline-none mr-2"
               value={age}
               onChange={handleAgeChange}
-            />{" "}
-          </div>{" "}
+            />
+          </div>
           <div className="w-full text-zinc-900">
             <Listbox value={selectedZone} onChange={handleZoneChange}>
               <div className="relative mt-1">
@@ -88,7 +88,7 @@ export const Calculate = () => {
                   <span className="block truncate">{selectedZone.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronDownIcon
-                      className="h-5 w-5 text-gray-400"
+                      className="size-5 text-gray-400"
                       aria-hidden="true"
                     />
                   </span>
@@ -140,7 +140,7 @@ export const Calculate = () => {
           </div>
           {showResetButton && (
             <button
-              className=" bg-indigo-500 hover:bg-indigo-300 border-black/40 text-white font-light w-full py-3 px-20 rounded-xl my-4 transition-colors druation-300 shadow-md"
+              className=" bg-indigo-500 hover:bg-indigo-300 border-black/40 text-white font-light w-full py-3 px-20 rounded-xl my-4 transition-colors druation-300 shadow-md "
               onClick={() => {
                 setAge("");
                 setShowResetButton(false);
@@ -170,7 +170,7 @@ export const Calculate = () => {
             onClick={() => setSelectedZone(zones[0])}
           >
             <div className="w-24">5</div>
-            <div className="w-24">Max</div>
+            <div className="w-24">Maximum</div>
             <div className="w-32">
               {age ? calculateHeartRateZone(5) : "0"}{" "}
               <span
