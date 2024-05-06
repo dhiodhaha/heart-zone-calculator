@@ -52,10 +52,7 @@ export const Calculate = () => {
   };
 
   return (
-    <div
-      id="Data"
-      className="flex flex-col items-center w-full text-white min-h-screen justify-between md:h-[calc(100vh-64px)] "
-    >
+    <div className="flex flex-col items-center w-full text-white min-h-screen justify-between md:h-[calc(100vh-64px)] md:max-w-xl">
       <div className="w-full max-w-2xl mx-auto pt-4">
         <div className="flex justify-between items-center px-8 text-md md:text-xl">
           <div>HRZ Calculator</div>
